@@ -17,3 +17,6 @@ JDBC ARCHITECTURE
 - without driver software we con not touch databse.
 - It acts as bridge between java application and database.
 - It responssible to connect java call it's data sepecific call and vice vrsa.
+
+
+![Image](https://github.com/user-attachments/assets/b6c5838d-9121-4beb-8b65-954eba5a8acf)
