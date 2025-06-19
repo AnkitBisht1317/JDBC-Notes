@@ -1,6 +1,6 @@
 JDBC ARCHITECTURE 
 - JDBC API provide drivermanager to java application.
-- Java application can communicate with ant database with the help of driver manager and database specific driver software.
+- Java application can communicate with any database with the help of driver manager and database specific driver software.
 
 ### Driver Manager
 - It is the key component in  JDBC Architeture.
