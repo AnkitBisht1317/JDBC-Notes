@@ -7,9 +7,12 @@ JDBC ARCHITECTURE
 - It is a class present in java.sql.package.
 - it is respossible to manage all database driver.
 - It is reponssible to register and unregister database driver.
+  
                            DriverManager.registerDriver(driver)
                            DriverManager.unregisterDriver(driver)
+  
 - It is responssible to establish connection to the database with the help of driver software.
+  
       Connection con = DriverManager.getConnection(JDBCUrl,username,pwd)
 
 ### DataBase Driver
@@ -20,3 +23,8 @@ JDBC ARCHITECTURE
 
 
 ![Image](https://github.com/user-attachments/assets/b6c5838d-9121-4beb-8b65-954eba5a8acf)
+
+            Java is Database Independent
+            Driver is Databse Dependent
+            Java is platfrom Independent
+            JVM is platfrom Dependent
