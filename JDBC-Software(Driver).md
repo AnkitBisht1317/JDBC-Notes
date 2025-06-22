@@ -12,7 +12,7 @@
 - While communicating with database we have to convert java calls into database specific calls and vica vrsa.
 - In the market thousands of driver are available but based on functionlity and architecture all driver are divied into four part
 
-### TYPE-1 DRIVER(JDBC-ODBC BRIDGE DDRIVER) 
+### TYPE-1 DRIVER(JDBC-ODBC BRIDGE DRIVER) 
 - Type-1 driver convert JDBC call into ODBC call and ODBC driver convert ODBC call into database specific calls.
 - Hence type-1 driver act as bridge between JDBC and ODBC.
 
@@ -28,7 +28,7 @@
 - this driver internally dependent on ODBC driver which will work only on window hence it is platform dependent driver
 
 
-### TYPE-2 DRIVER(PARTIALLY JAVA DDRIVER)
+### TYPE-2 DRIVER(PARTIALLY JAVA DRIVER)
 - Type-2 driver excatly same as type-1 driver but diffrence is ODBC driver is replace by database sepecific native API driver.
 - Native API mean set of function return in non-java
 - Type-2 driver convert JDBC call into vender specific native library calls which can be understandable directly database engine.
@@ -45,7 +45,7 @@
 - It is platform dependent driver
 - we install native libaray for client machines.
 
-### TYPE-3 DRIVER(ALL JAVA NET PROTOCOL & MIDDLEWARE & NETWORK PROTOCOL DDRIVER)
+### TYPE-3 DRIVER(ALL JAVA NET PROTOCOL & MIDDLEWARE & NETWORK PROTOCOL DRIVER)
 - Type-3 driver convert JDBC calls into middleware server specific calls middleware server convert middleware server specific calls into database specific calls.
 - Internally middleware server uses type-1,2 or 4 driver to communicate with database.
 
@@ -59,3 +59,22 @@
 #### Disadvantage
 - Because of having middleware server is the middle there may be a chance of performance problem.
 - We need to purchase middleware server and hence the cost of this driver is high when compared with all remaining driver.
+
+### TYPE-4 DRIVER(PURE JAVA & NATIVE PROTOCOL & THIN DRIVER)
+- This driver convert JDBC call into database specific calls directly.
+- This java purelly developed in java that why it also known as pure java driver.
+
+![Image](https://github.com/user-attachments/assets/ba909a51-5fe4-482d-a586-4c1c77c7c215)
+
+#### Advantage 
+- It is platform independent driver.
+- It won't require ODBC driver or Native library or middleware.
+
+#### Disadvantage
+- The only disadvantage of this driver is it database dependent driver. because it communicate database directly.
+
+
+## NOTE - 
+- If we use only one type of database in our application then we use type-4 driver.
+- If we use multiple database in our application then we use type-3 driver.
+- if type-3, type-4 is not applicable then use type-2 driver.
