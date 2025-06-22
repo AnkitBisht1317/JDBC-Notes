@@ -26,3 +26,21 @@
 #### Disadvantage 
 - It is slower driver amonng all driver because first it is convert JDBC to ODBC then ODBC to database specific calls.
 - this driver internally dependent on ODBC driver which will work only on window hence it is platform dependent driver
+
+
+### TYPE-2 DRIVER(PARTIALLY JAVA DDRIVER)
+- Type-2 driver excatly same as type-1 driver but diffrence is ODBC driver is replace by database sepecific native API driver.
+- Native API mean set of function return in non-java
+- Type-2 driver convert JDBC call into vender specific native library calls which can be understandable directly database engine.
+
+![Image](https://github.com/user-attachments/assets/73381a23-98a6-46a6-81f5-708a81d24ad3)
+
+#### Advantage 
+- When campare with type-1 driver performance is high.
+- Np need to arrange ODBC driver.
+- when campare with type-1 driver potability is more because type-1 driver is applicable only for window machines.
+
+#### Disadvantage 
+- It is database dependent driver
+- It is platform dependent driver
+- we install native libaray for client machines.
