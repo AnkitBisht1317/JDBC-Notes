@@ -44,3 +44,18 @@
 - It is database dependent driver
 - It is platform dependent driver
 - we install native libaray for client machines.
+
+### TYPE-3 DRIVER(ALL JAVA NET PROTOCOL & MIDDLEWARE & NETWORK PROTOCOL DDRIVER)
+- Type-3 driver convert JDBC calls into middleware server specific calls middleware server convert middleware server specific calls into database specific calls.
+- Internally middleware server uses type-1,2 or 4 driver to communicate with database.
+
+![Image](https://github.com/user-attachments/assets/b0a0f1aa-561b-41e0-8656-6f0ad4b1df93)
+
+#### Advantage 
+- This driver won't communicate with databasse directly and hence it is database independent driver.
+- It is platform independent driver.
+- No need of ODBC driver or vender specific native library.
+
+#### Disadvantage
+- Because of having middleware server is the middle there may be a chance of performance problem.
+- We need to purchase middleware server and hence the cost of this driver is high when compared with all remaining driver.
