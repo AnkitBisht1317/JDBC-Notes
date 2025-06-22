@@ -19,5 +19,10 @@
 - But JDBC 4.0 version that is not required JDBC automatically load classpath.
 - After load driver class, register driver class automatically.
 
-### 1. Establish Connection Between Java Application and Database
-- 
+### 2. Establish Connection Between Java Application and Database
+- The getConnection() method of DriverManager class is used to establish connection with the database.
+
+       Connection con = DriverMnager.getConnection(jdkurl,username,password);
+- JDK URL have 3 part - main protocol(which is always JDBC) : subProtocol(which is depend on database : subname(Hostname, port, database name))
+
+      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdb","root", 1317);
