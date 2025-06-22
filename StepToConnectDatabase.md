@@ -7,9 +7,17 @@
 - Type-1 driver is available as the part of JDK and hence we are not requied to set any classpath.
 - Every driver software is identified with some special class which is nothing but Driver Class.
   
-                      Type-1 driver class name is sun.jbdc.odbc.JdbcOdbcDriver
+                      Type-1  sun.jbdc.odbc.JdbcOdbcDriver
+                      Type 2	oracle.jdbc.driver.OracleDriver
+                      Type 3	com.ddtek.jdbc.openedge.OpenEdgeDriver
+                      Type 4	com.mysql.cj.jdbc.Driver, org.postgresql.Driver
 
 - We have to load this driver class.
 - Any java class we can load by using Class.forName() method, Hence we load driver class
 
                               Class.forName(sun.jbdc.odbc.JdbcOdbcDriver)
+- But JDBC 4.0 version that is not required JDBC automatically load classpath.
+- After load driver class, register driver class automatically.
+
+### 1. Establish Connection Between Java Application and Database
+- 
