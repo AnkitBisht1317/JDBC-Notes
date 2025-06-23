@@ -70,3 +70,79 @@ if (isResultSet) {
     System.out.println("Rows affected: " + count);
 }
 ```
+
+```
+By mistake if we provide select query to non-select statement then the result depends on driver to driver.
+```
+
+ ### 5. Process Result From ResultSet
+ - Result follows Iterater design pattern
+ - RsultSet object is always assoiatted with statement object
+ - per statement only one ResultSet is possible at a time if we are trying to open another ResultSet then automatically first ResultSet will be closed.
+```
+ Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/testdb", "root", "password");
+
+            // 2. Create Statement
+            Statement stmt = con.createStatement();
+
+            // 3. Execute Query (returns ResultSet)
+            ResultSet rs = stmt.executeQuery("SELECT id, name FROM students");
+
+            // 4. Process ResultSet using Iterator-style (next())
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                System.out.println("ID: " + id + ", Name: " + name);
+            }
+```
+
+ ### 6. Close the Connection
+ - By closing connection object, statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.
+
+```
+import java.sql.*;
+
+public class JdbcFullExample {
+    public static void main(String[] args) {
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            // Step 1: Load and Register Driver Class (optional from JDBC 4.0)
+            Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL Type 4 Driver
+
+            // Step 2: Establish Connection
+            con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/testdb", "root", "password");
+
+            // Step 3: Create Statement
+            stmt = con.createStatement();
+
+            // Step 4: Execute SQL Query
+            rs = stmt.executeQuery("SELECT id, name FROM students");
+
+            // Step 5: Process ResultSet
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                System.out.println("ID: " + id + ", Name: " + name);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Step 6: Close Resources
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (con != null) con.close(); // Closing connection will close stmt and rs too
+                System.out.println("Connection closed successfully.");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
