@@ -78,3 +78,26 @@
 - If we use only one type of database in our application then we use type-4 driver.
 - If we use multiple database in our application then we use type-3 driver.
 - if type-3, type-4 is not applicable then use type-2 driver.
+
+
+# 📌 Difference Between Type 4 and Type 5 JDBC Drivers
+
+This document compares **Type 4** and **Type 5** JDBC drivers in simple and clear terms.
+
+---
+
+## 🔄 Summary Table
+
+| Feature / Point                      | **Type 4 JDBC Driver**                                         | **Type 5 JDBC Driver**                                                    |
+|-------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------|
+| 🧩 **Definition**                   | Pure Java driver that directly communicates with the database using native protocol | Enhanced version of Type 4 with additional enterprise-level features      |
+| 🏗️ **Developed by**                | Database vendors (e.g., Oracle, MySQL)                          | Third-party vendors (e.g., DataDirect, DbSchema)                          |
+| 🔌 **Native Library Required**     | ❌ No                                                           | ❌ No                                                                      |
+| ⚙️ **Performance**                | Good performance                                               | Optimized, better performance through advanced tuning                     |
+| 🧰 **Features**                    | Basic JDBC functionality                                       | Connection pooling, load balancing, advanced logging and monitoring       |
+| 📦 **JAR Size / Complexity**       | Lightweight and simple                                         | Heavier with more capabilities                                            |
+| 🧪 **Debugging & Monitoring**      | Basic or limited                                               | Advanced tools and detailed logs                                          |
+| 💸 **License**                    | Usually free                                                   | Often commercial (paid)                                                   |
+| 🌐 **Use Case**                   | Best for small to medium applications                          | Best for large enterprise-level applications                              |
+| 📊 **Examples**                   | `mysql-connector-java.jar`, `ojdbc8.jar`                       | `DataDirect JDBC`, `DbSchema Universal JDBC Driver`                       |
+---
