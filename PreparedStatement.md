@@ -1,5 +1,6 @@
 # Prepared Statement 
 - In the case of normal statement, whenever we are executing SQL Query, every time compilation and execution will be happened at database side.
+- Statement object work only static query.
 
 ![Image](https://github.com/user-attachments/assets/b22a214c-617c-44d0-817f-dd397203014b)
 
@@ -9,6 +10,7 @@
 - To overcome this problem we should go for preparedStatement.
 - The main advantage of preparedStatement is the query will be compiled only once even though we are executing multiple times, so that overalll performance of the application will be improved.
 - We can create preparedStatement by using prepareStatement(String query) throws SQLException.
+- It is work for both static and dynamic query.
 
 ![Image](https://github.com/user-attachments/assets/2557a5a0-3794-4cdf-a8c6-272ef34eb0fe)
 
