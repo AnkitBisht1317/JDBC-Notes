@@ -98,3 +98,10 @@ public class TransactionExample {
 
                       con.releaseSavepoint(sp);
 
+
+# Transaction Concurrency Problem 
+- When multiple transaction run at the same time they may chance of data inconsistency problem, These are known as Concurrency problem.
+- There are 3 type of Transaction Concurrency Problem
+
+### 1. Dirty Read Problem (Uncomitted Problem)
+- Before committing the transaction, if its intermediate results used by any other transaction then there may be a chance of data incosistency problem. this is known as dirty read problem.
