@@ -84,3 +84,17 @@ public class TransactionExample {
 }
 ```
 
+# Savepoint
+- Savepoint is an interface present in java.sql.package.
+- Savepoint concept is applicable only in transactions.
+- Within a transaction if we want to rollback a particular group of operation based on some condition then we should go for Savepoint.
+- We can set Savepoint by using setSavepoint() method of connection interface.
+
+                      Savepoint sp = con.setSavepoint();
+- To perform rollback operation for a particular group of operation with repect to Savepoint, we can use rollback() method as follow
+
+                      con.rollback(sp);
+- We can release or delete Savepoint by using release Savepoint() method of connection interface.
+
+                      con.releaseSavepoint(sp);
+
