@@ -105,3 +105,10 @@ public class TransactionExample {
 
 ### 1. Dirty Read Problem (Uncomitted Problem)
 - Before committing the transaction, if its intermediate results used by any other transaction then there may be a chance of data incosistency problem. this is known as dirty read problem.
+
+### 2. Non-Repeatable Read Problem
+- For the same Read Operation, in the same transaction if we get different results at different times, then such type of problem is called Non-Repeatable Read problem.
+
+### 3. Phantom Read Problem 
+- A phantom read occurs when one transaction reads all the rows that satify a where condition and second transaction insert a new row that satify same where condition. if the first transaction reads for the same condition in the result an additional row will come. this row is called phantom row and this problem is called phantom read problem.
+  
